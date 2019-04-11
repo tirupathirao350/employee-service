@@ -17,7 +17,7 @@ import com.org.employee.domain.Employee;
 public class EmployeeResource {
 
 	private String addressServiceId="address-service";
-	private String addressServicePort="30020";
+	private String addressServicePort="8083";
 	
 	@GetMapping(value = "/{empId}")
 	public Employee getEmployeeDetails(@PathVariable int empId) {
