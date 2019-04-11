@@ -25,7 +25,7 @@ pipeline {
     }
     stage('Push image') {
       steps {
-        withDockerRegistry([credentialsId: 'docker-hub-credentials', url: "https://index.docker.io/v1/"]) {
+        withDockerRegistry([credentialsId: 'docker-hub', url: "https://index.docker.io/v1/"]) {
           sh '/usr/bin/docker push satheeshch/employee-service:latest'
         }
       }
