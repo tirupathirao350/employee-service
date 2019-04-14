@@ -6,7 +6,11 @@ metadata:
   name: employee-service
 spec:
   ports:
-    - port: 8082
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 8082
+      
   selector:
     app: employee-service
   type: LoadBalancer
