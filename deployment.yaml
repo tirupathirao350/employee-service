@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: employee-service
@@ -7,11 +7,10 @@ spec:
   template:
     metadata:
       labels:
-        app: employee-service        
+        app: employee-service
     spec:
       containers:
       - name: employee-service
-        image: 990456062402.dkr.ecr.us-east-1.amazonaws.com/employee-service:latest
-        imagePullPolicy: IfNotPresent
+        image: satheeshch/employee-service:latest
         ports:
-        - containerPort: 8091
+        - containerPort: 80
