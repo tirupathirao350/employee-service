@@ -9,6 +9,10 @@ spec:
   - name: http
     protocol: TCP
     port: 8082
+  - name: https
+    protocol: TCP
+    port: 443
+    
     
       
   selector:
