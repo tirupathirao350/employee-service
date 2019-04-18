@@ -3,19 +3,12 @@ kind: Service
 metadata:
   labels:
     name: employee-service
-  name: employee-service
+    namespace: "sat-organization"
 spec:
   ports:
   - name: http
     protocol: TCP
     port: 8082
-  - name: https
-    protocol: TCP
-    port: 443
-    targetPort: 8084
-    
-    
-      
   selector:
     app: employee-service
   type: LoadBalancer
