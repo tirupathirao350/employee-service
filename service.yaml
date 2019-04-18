@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: sat-organization
   labels:
-    name: employee-service
-    namespace: "sat-organization"
+    name: employee-service    
 spec:
   ports:
   - name: http
