@@ -3,6 +3,7 @@ kind: Service
 metadata:
   labels:
     name: employee-service  
+    Namespace: "default"
 spec:
   ports:
   - name: http
