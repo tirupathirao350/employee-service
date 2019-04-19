@@ -1,8 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: employee-service
-  namespace: sat-organization
+  name: employee-service 
 spec:
   replicas: 1
   template:
