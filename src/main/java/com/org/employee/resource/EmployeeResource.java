@@ -24,15 +24,15 @@ public class EmployeeResource {
 
 		List<Employee> employeeList = getAllEmployees();
 		Employee emp = new Employee();
-		 RestTemplate restTemplate = new RestTemplate();
-		Address address = restTemplate.getForObject("http://"+addressServiceId+":"+addressServicePort+"/address/1", Address.class);
+		// RestTemplate restTemplate = new RestTemplate();
+		//Address address = restTemplate.getForObject("http://"+addressServiceId+":"+addressServicePort+"/address/1", Address.class);
 
 		for (Employee employee : employeeList) {
 			if (employee.getEmpId() == empId) {
 				emp = employee;
 			}
 		}
-		emp.setAddress(address);
+		//emp.setAddress(address);
 		return emp;
 	}
 
