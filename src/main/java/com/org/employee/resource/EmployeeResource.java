@@ -43,7 +43,7 @@ public class EmployeeResource {
 		Employee emp2 = new Employee(2, "Chepuri");
 		Employee emp3 = new Employee(3, "Anil");
 		Employee emp4 = new Employee(4, "Santhosh");
-		Employee emp5 = new Employee(5, "Jegadeep");
+		Employee emp5 = new Employee(5, "Vikram");
 
 		employeeList.add(emp1);
 		employeeList.add(emp2);
