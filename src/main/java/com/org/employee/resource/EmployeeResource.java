@@ -22,6 +22,7 @@ public class EmployeeResource {
 	@GetMapping(value = "/{empId}")
 	public Employee getEmployeeDetails(@PathVariable int empId) {
 
+		
 		List<Employee> employeeList = getAllEmployees();
 		Employee emp = new Employee();
 		// RestTemplate restTemplate = new RestTemplate();
