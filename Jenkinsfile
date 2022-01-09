@@ -33,10 +33,12 @@ pipeline {
     stage('deploy to ECR') {
       steps {
       node('eks'){    
-              checkout scm
+        checkout scm
         sh 'export KUBECONFIG=~/.kube/config'
-         sh 'aws eks update-kubeconfig --name eks-master --region us-west-2'
+        sh 'aws eks update-kubeconfig --name eks-master --region us-west-2'
         sh 'kubectl get svc'
+        sh 'kubectl apply -f deployment.yaml'
+        sh 'kubectl apply -f service.yaml'
         }
       }
     }
