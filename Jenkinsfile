@@ -25,8 +25,8 @@ pipeline {
     stage('push image to ECR'){
       steps {
         withDockerRegistry(credentialsId: 'ecr:us-west-2:aws-credentials', url: 'http://037217839351.dkr.ecr.us-west-2.amazonaws.com/employee-service') {
-          sh 'docker tag employee-service:latest http://037217839351.dkr.ecr.us-west-2.amazonaws.com/employee-service:latest'
-         sh 'docker push http://037217839351.dkr.ecr.us-west-2.amazonaws.com/employee-service:latest'
+          sh 'docker tag employee-service:latest http://037217839351.dkr.ecr.us-west-2.amazonaws.com/employee-service'
+         sh 'docker push http://037217839351.dkr.ecr.us-west-2.amazonaws.com/employee-service'
         } 
       }
     }
