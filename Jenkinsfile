@@ -32,7 +32,8 @@ pipeline {
     }
     stage('deploy to ECR') {
       steps {
-         sh 'aws eks update-kubeconfig --name eks-master --region us-west-2 && kubectl get svc' 
+         sh 'aws eks update-kubeconfig --name eks-master --region us-west-2'
+        sh 'kubectl get svc'
         
         
       }
