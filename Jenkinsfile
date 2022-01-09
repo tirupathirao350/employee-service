@@ -32,6 +32,7 @@ pipeline {
     }
     stage('deploy to ECR') {
       steps {
+        sh 'aws eks update-kubeconfig --name eks-master --region us-west-2'
          sh 'kubectl apply -f deployment.yaml' 
          sh 'kubectl apply -f service.yaml' 
         
