@@ -24,19 +24,17 @@ pipeline {
     }   
     stage('push image to ECR'){
       steps {
-        withDockerRegistry(credentialsId: 'ecr:us-east-1:aws-credentials', url: 'http://092390458462.dkr.ecr.us-east-1.amazonaws.com/employee-service') {
-          sh 'docker tag employee-service:latest 092390458462.dkr.ecr.us-east-1.amazonaws.com/employee-service:latest'
-         sh 'docker push 092390458462.dkr.ecr.us-east-1.amazonaws.com/employee-service:latest'
+        withDockerRegistry(credentialsId: 'ecr:us-west-2:aws-credentials', url: 'public.ecr.aws/e5n9b6i1/emplyee-service') {
+          sh 'docker tag employee-service:latest public.ecr.aws/e5n9b6i1/emplyee-service:latest'
+         sh 'docker push public.ecr.aws/e5n9b6i1/emplyee-service:latest'
         } 
       }
     }
     stage('deploy to ECR') {
       steps {
-        node('eks-master-node'){
-          checkout scm
          sh 'kubectl apply -f deployment.yaml' 
          sh 'kubectl apply -f service.yaml' 
-        }
+        
       }
     }
   }
