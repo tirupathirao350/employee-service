@@ -28,6 +28,7 @@ public class EmployeeResource {
 		// RestTemplate restTemplate = new RestTemplate();
 		//Address address = restTemplate.getForObject("http://"+addressServiceId+":"+addressServicePort+"/address/1", Address.class);
 
+		
 		for (Employee employee : employeeList) {
 			if (employee.getEmpId() == empId) {
 				emp = employee;
