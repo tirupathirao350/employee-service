@@ -37,7 +37,7 @@ pipeline {
         checkout scm
         sh 'export KUBECONFIG=~/.kube/config'
         sh 'aws eks update-kubeconfig --name terraform-eks-demo --region us-east-1'
-        sh 'kubectl get svc'
+        sh '/home/ec2-user/bin/kubectl get svc'
         sh 'kubectl apply -f deployment.yaml'
         sh 'kubectl apply -f service.yaml'
         }
