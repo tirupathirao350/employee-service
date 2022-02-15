@@ -25,9 +25,9 @@ pipeline {
     }   
     stage('push image to ECR'){
       steps {
-        withDockerRegistry(credentialsId: 'ecr:us-west-2:aws-credentials', url: 'http://037217839351.dkr.ecr.us-west-2.amazonaws.com/employee-service') {
-          sh 'docker tag employee-service:latest 037217839351.dkr.ecr.us-west-2.amazonaws.com/employee-service:latest'
-         sh 'docker push 037217839351.dkr.ecr.us-west-2.amazonaws.com/employee-service:latest'
+        withDockerRegistry(credentialsId: 'ecr:us-east-1:aws-credentials', url: 'http://145238356680.dkr.ecr.us-east-1.amazonaws.com/employee-service') {
+          sh 'docker tag employee-service:latest 145238356680.dkr.ecr.us-east-1.amazonaws.com/employee-service:latest'
+         sh 'docker push 145238356680.dkr.ecr.us-east-1.amazonaws.com/employee-service:latest'
         } 
       }
     }
@@ -36,7 +36,7 @@ pipeline {
       node('eks'){    
         checkout scm
         sh 'export KUBECONFIG=~/.kube/config'
-        sh 'aws eks update-kubeconfig --name eks-master --region us-west-2'
+        sh 'aws eks update-kubeconfig --name eks-master --region us-east-1'
         sh 'kubectl get svc'
         sh 'kubectl apply -f deployment.yaml'
         sh 'kubectl apply -f service.yaml'
