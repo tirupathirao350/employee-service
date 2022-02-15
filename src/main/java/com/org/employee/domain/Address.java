@@ -14,6 +14,7 @@ public class Address implements Serializable{
 	private String zip;
 	private int empId;
 	
+	
 	public Address() {}
 
 	public Address(int addressId, String line1, String line2, String city, String state, String zip, int empId) {
