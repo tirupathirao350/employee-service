@@ -35,6 +35,7 @@ public class Address implements Serializable{
 	public void setAddressId(int addressId) {
 		this.addressId = addressId;
 	}
+	
 
 	public String getLine1() {
 		return line1;
