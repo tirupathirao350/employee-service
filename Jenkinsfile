@@ -31,7 +31,7 @@ pipeline {
       }
     }
     
-    stage('deploy to ECR') {
+    stage('deploy to EKS Cluster') {
       steps {
       node('eks'){    
         checkout scm
